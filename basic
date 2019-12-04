@@ -1,0 +1,3 @@
+INSERT INTO user_info("user_ID", "firstName", "lastName", "address", "state", "zip")
+VALUES(1, 'Ben', 'Lehfeldt', '760 Morgan', 'colorado', 80303),
+(2, 'Davis', 'John', '658 Marine', 'colorado', 80303);
