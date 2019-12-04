@@ -1,0 +1,23 @@
+book_name                 |     author      | year | book_ID
+------------------------------------------+-----------------+------+---------
+Harry Potter and the Sorcerers Stone     | JK Rowlings     | 1965 |       1
+Harry Potter and the Deathly Hallows     | JK Rowlings     | 1979 |       2
+Harry Potter and the Prisoner of Azkaban | JK Rowlings     | 1983 |       3
+The Pragmatic Programmer                 | David Thomas    | 1999 |       4
+Clean Code                               | Robert Martin   | 1994 |       4
+Code: The Hidden Language                | Charles Petzold | 1971 |       5
+The self-taught Programmer               | Cory Althoff    | 1996 |       6
+(7 rows)
+
+
+user_ID | firstName |     lastName      |     address     |  state   |  zip
+---------+-----------+-------------------+-----------------+----------+-------
+      1 | Ben       | Lehfeldt-Ehlinger | 760 Morgan Dr.  | Colorado | 80303
+      2 | John      | DOE               | 658 Marine      | Colorado | 80303
+      3 | Al        | Jackson           | 1200 University | Colorado | 80303
+      4 | Alex      | Barn              | 500 College     | Colorado | 80303
+      5 | Vincent   | Wang              | N/A             | Colorado | 80303
+      6 | Davis     | Robertson         | N/A             | Colorado | 80303
+      7 | Ian       | Claras            | N/A             | Colorado | 80303
+      8 | Zach      | Lichtenberg       | N/A             | Colorado | 80303
+(8 rows)

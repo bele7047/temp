@@ -1,8 +1,8 @@
 const Pool = require('pg').Pool;
 const pool = new Pool({
-  user: 'ben',
+  user: 'postgres',
   host: 'localhost',
-  database: 'api',
+  database: 'bookcellar_db',
   password: 'password',
   port: 5432,
 });
@@ -10,7 +10,7 @@ const pool = new Pool({
 //query for all users
 
 function getUsers(req, res){
-  pool.query('Select * FROM user_info ORDER BY user_id ASC', (error, results) => {
+  pool.query('Select * FROM user_info ORDER BY "user_ID" ASC', (error, results) => {
     if(error){
       throw error;
     }
@@ -31,7 +31,7 @@ function getUsersByID(req, res){
 
 // query for all books
 function getBooks(req, res){
-  pool.query('SELECT * FROM books_info ORDER BY book_ID ASC', (error, results) => {
+  pool.query('SELECT * FROM books_info ORDER BY "book_ID" ASC', (error, results) => {
     if(error){
       throw error;
     }
@@ -61,7 +61,7 @@ function addUser(req, res){
 
   pool.query(
     'INSERT INTO user_info( "firstName", "lastName", "address", "state", "zip") VAULES($1, $2, $3,$4, $5) RETURNING *',
-    [user_ID, firstName, lastName, address, state, zip],
+    [firstName, lastName, address, state, zip],
     (err, results, feilds) => {
       if(err){
         res.send({
@@ -80,17 +80,7 @@ function addUser(req, res){
     });
 }
 
-//delete users
-function deleteUser(req, res){
-  const id = parseInt(req. params.id)
 
-  pool.query('DELETE FROM user_info WHERE user_ID = $1', [user_ID], (err, results) => {
-    if(error){
-      throw error
-    }
-    res.status(200).send('User deleted with ID: ${user_ID}')
-  })
-}
 
 //add books
 function addBook(req,res){
@@ -123,7 +113,6 @@ module.exports = {
   getUsers,
   getBooks,
   addUser,
-  deleteUser,
   getBookByID,
   getUsersByID,
   deleteBook,

@@ -1,0 +1,33 @@
+CREATE TABLE "books_info" (
+  "book_name" VARCHAR(40),
+  "author" VARCHAR(40),
+  "year" INT,
+  "book_ID" INT,
+  PRIMARY KEY ("book_name")
+);
+
+CREATE TABLE "chat_info" (
+  "user_ID" INT,
+  "date" DATE,
+  "book_ID" INT,
+  PRIMARY KEY ("user_ID")
+);
+
+CREATE TABLE "user_info" (
+  "user_ID" INT,
+  "firstName" VARCHAR(20),
+  "lastName" VARCHAR(40),
+  "address" VARCHAR(20),
+  "state" VARCHAR(20),
+  "zip" INT,
+  PRIMARY KEY ("user_ID")
+);
+
+CREATE TABLE "order_history" (
+  "order_ID" INT,
+  "user_ID" INT,
+  "book_ID" INT,
+  "date" DATE,
+  "shipping_address" VARCHAR(20),
+  PRIMARY KEY ("order_ID")
+);

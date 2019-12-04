@@ -33,10 +33,14 @@ app.get('/', (req,res) => {
 app.get('/users', db.getUsers) //get all users
 app.get('/users: id', db.getUsersByID);
 
+//get all books.
+app.get('/books', db.getBooks)
+app.get('/books', db.getBookByID)
+
 
 /* TODO:  add the POST */
 
-app.post('/register', db.login);
+// app.post('/register', db.login);
 
 
 //Link API
@@ -44,5 +48,5 @@ app.use('/api', router);
 
 //listen to chossen port.
 app.listen(port, () => {
-  console.log('App running on port ${port}');
+  console.log(`App running on port ${port}`);
 })
