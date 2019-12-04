@@ -31,11 +31,11 @@ app.get('/', (req,res) => {
 
 //get all users
 app.get('/users', db.getUsers) //get all users
-app.get('/users: id', db.getUsersByID);
+app.get('/users/:id', db.getUsersByID);
 
 //get all books.
 app.get('/books', db.getBooks)
-app.get('/books', db.getBookByID)
+app.get('/books/:id', db.getBookByID)
 
 
 /* TODO:  add the POST */

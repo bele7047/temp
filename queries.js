@@ -21,12 +21,12 @@ function getUsers(req, res){
 // query for one users
 function getUsersByID(req, res){
   const id = parseInt(req.params.id);
-  pool.query('SELECT * FROM user_info WHERE id = $1', [id], (error,results) => {
+  pool.query('SELECT * FROM user_info WHERE "user_ID"= $1', [id], (error,results) => {
     if(error){
       throw error
     }
     res.status(200).json(results.rows);
-  })
+  });
 }
 
 // query for all books
@@ -39,16 +39,18 @@ function getBooks(req, res){
   });
 }
 
-//query for one books
+
+// query for one book
 function getBookByID(req, res){
   const id = parseInt(req.params.id);
-  pool.query("SELECT * FROM books_info WHERE id = $1", [id], (error, results) => {
+  pool.query('SELECT * FROM books_info WHERE "book_ID" = $1', [id], (error,results) => {
     if(error){
-      throw error;
+      throw error
     }
     res.status(200).json(results.rows);
-  })
+  });
 }
+
 
 //add users
 function addUser(req, res){
@@ -79,7 +81,6 @@ function addUser(req, res){
       }
     });
 }
-
 
 
 //add books
